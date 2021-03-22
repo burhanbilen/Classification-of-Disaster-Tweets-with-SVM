@@ -42,7 +42,6 @@ y_train = np.array(target)
 count = CountVectorizer()
 X_train = count.fit_transform(X)
 
-
 logr =  SVC(kernel = 'rbf')
 history = logr.fit(X_train, y_train)
 
@@ -51,7 +50,6 @@ test = []
 test = clean(test_data, test)
 
 X_test = count.transform(test)
-X_test = X_test
 
 pred = logr.predict(X_test)
 y_pred = np.array([1 if i > 0.5 else 0 for i in pred]).reshape(-1,1)
